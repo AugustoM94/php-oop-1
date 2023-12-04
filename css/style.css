@@ -3,3 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: #232321;
+}
+
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+main i{
+    color: yellow;
+}
+
+img {
+    max-width: 400px;
+    max-height: 350px;
+}
