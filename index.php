@@ -1,4 +1,36 @@
 
+<?php
+
+class Movie 
+{
+    private  $id;
+    private  $title;
+    private  $overview;
+    private  $vote_average;
+    private  $poster_path;
+    private  $original_language;
+
+    public function __construct($id, $title, $overview, $vote, $poster_path, $original_language) 
+    {
+        $this->id = $id;
+        $this->title = $title;  
+        $this->overview = $overview;
+        $this->vote_average = $vote;
+        $this->poster_path = $poster_path;
+        $this->original_language = $original_language;
+    }
+
+}
+
+$movieString = file_get_contents(__DIR__ . '/model/movie_db.json');
+$movieList = json_decode($movieString, true);
+$movies = [];
+
+foreach ($movieList as $movie) {
+    $movies[] = new Movie($movie['id'], $movie['title'], $movie['overview'], $movie['vote_average'], $movie['poster_path'], $movie['original_language']);
+}
+var_dump($movies);
+?>
 
 
 <!DOCTYPE html>
